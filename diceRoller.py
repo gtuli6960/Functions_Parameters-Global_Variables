@@ -1,34 +1,30 @@
-#Coin flip program
-#Describe the purpose of this program here.
+#Dice roll program.
 
-inport random;time
+import random,time
 
-s1 = "- - - - -\n|       |\n|   O   |\n|       |\n- - - - -\n"
-s2 = "- - - - -\n| O     |\n|       |\n|     O |\n- - - - -\n"
-s3 = "- - - - -\n| O     |\n|   O   |\n|     O |\n- - - - -\n"
-s4 = "- - - - -\n| O   O |\n|       |\n| O   O |\n- - - - -\n"
-s5 = "- - - - -\n| O   O |\n|   O   |\n| O   O |\n- - - - -\n"
-s6 = "- - - - -\n| O   O |\n| O   O |\n| O   O |\n- - - - -\n"
+faces = ["- - - - -\n|       |\n|   O   |\n|       |\n- - - - -\n","- - - - -\n| O     |\n|       |\n|     O |\n- - - - -\n","- - - - -\n| O     |\n|   O   |\n|     O |\n- - - - -\n","- - - - -\n| O   O |\n|       |\n| O   O |\n- - - - -\n","- - - - -\n| O   O |\n|   O   |\n| O   O |\n- - - - -\n","- - - - -\n| O   O |\n| O   O |\n| O   O |\n- - - - -\n"]
 
 def roll():
-    Print("rolling....."
-    roll = rand.randing(7)
+    print("rolling.....")
+    number = random.randint(0,5)
+    return number
+
+def show_dice(number):
+    print(faces[number])
+
+previous = -1
+
+while previous != 5:
+    number = roll()
+    previous = number
+    time.sleep(0.1)
+    show_dice(number)
+
+print("You rolled a six.  Well done.")
 
 
-def show_dice(roll)
-    if roll = 1:
-        print(S1)
-    else roll = 2
-        print(s2)
-    else roll = 3
-        print(s3)
-    else roll = 4
-        print(s4)
-    else roll = 5
-        print(s5)
-    else roll = 6
-        print(s6)
-
-roll
-time.sleep(1)
-show_dice(roll)
+# Changed the top comment to relate to the program.
+# Fixed the import errors.
+# Adjusted the functions to work correctly with each other.
+# Added functionality so when a six is rolled the user wins.
+# Made the whole program more efficient by using a list to contain the dice faces, and a single line of code to deal with the generated number and output the dice face.
