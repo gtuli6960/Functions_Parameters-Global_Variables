@@ -1,25 +1,32 @@
-#Dice roll program.
+# Dice roll program.
 
+# Import external libraries.
 import random,time
 
+# Define a list containing the dice faces.
 faces = ["- - - - -\n|       |\n|   O   |\n|       |\n- - - - -\n","- - - - -\n| O     |\n|       |\n|     O |\n- - - - -\n","- - - - -\n| O     |\n|   O   |\n|     O |\n- - - - -\n","- - - - -\n| O   O |\n|       |\n| O   O |\n- - - - -\n","- - - - -\n| O   O |\n|   O   |\n| O   O |\n- - - - -\n","- - - - -\n| O   O |\n| O   O |\n| O   O |\n- - - - -\n"]
 
+# Roll the dice.
 def roll():
     print("rolling.....")
     number = random.randint(0,5)
     return number
 
+# Output (show) the dice.
 def show_dice(number):
     print(faces[number])
 
+# A variable to hold the previous roll.
 previous = -1
 
+# While loop to detect if the previous roll was a 6.
 while previous != 5:
     number = roll()
     previous = number
     time.sleep(0.1)
     show_dice(number)
 
+# Win script.
 print("You rolled a six.  Well done.")
 
 
